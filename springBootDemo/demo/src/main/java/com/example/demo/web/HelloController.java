@@ -12,12 +12,12 @@ import java.util.Date;
 @RestController
 public class HelloController {
     @RequestMapping("/hello")
-    public String index(){
+    public String index() {
         return "Hello World";
     }
 
     @RequestMapping("getEmployee")
-    public Employee getEmployee(){
+    public Employee getEmployee() {
         Employee employee = new Employee();
         employee.setName("Susan");
         employee.setGender("Female");

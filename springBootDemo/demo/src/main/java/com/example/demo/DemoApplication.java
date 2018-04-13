@@ -16,12 +16,12 @@ import java.util.List;
 @SpringBootApplication
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
     @Bean
-    public HttpMessageConverters fastJsonHttpMessageConverters(){
+    public HttpMessageConverters fastJsonHttpMessageConverters() {
         //1.需要定义一个convert转换消息的对象;
         FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
         //2:添加fastJson的配置信息;
@@ -33,7 +33,7 @@ public class DemoApplication {
         //4.在convert中添加配置信息.
         fastJsonHttpMessageConverter.setSupportedMediaTypes(fastMediaTypes);
         fastJsonHttpMessageConverter.setFastJsonConfig(fastJsonConfig);
-        fastJsonHttpMessageConverter.setDateFormat("yyyy-MM-dd HH:mm:ss");//日期格式
+        fastJsonHttpMessageConverter.setDateFormat("yyyy-MM-dd HH:mm:ss"); //日期格式
 
         HttpMessageConverter<?> converter = fastJsonHttpMessageConverter;
         return new HttpMessageConverters(converter);
